@@ -6,7 +6,7 @@ frontend/.env
 .env
 *.env
 
-############################
+
 # Node modules
 ############################
 backend/node_modules/
