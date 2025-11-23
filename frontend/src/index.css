@@ -1,0 +1,31 @@
+a{
+  text-decoration: none;
+}
+
+.registration{
+  padding-top: 100px;
+  background: rgb(89, 152, 202);
+  height: 100vh;
+}
+
+.imgholder{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.main{
+  display: flex;
+}
+
+.left{
+  width: 20%;
+}
+
+.right{
+  width: 80%;
+}
+
+.sidebar{
+  background: rgb(30, 148, 175);
+  height: 100vh;
+}
