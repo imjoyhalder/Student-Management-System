@@ -1,41 +1,42 @@
-# Dependencies
+# Node.js dependencies
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Environment variables
+# TypeScript build output
+dist/
+build/
+
+# Environment files
 .env
 .env.local
-.env.production
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Optional npm cache
+.npm
 
 # Logs
 logs
 *.log
+pids
+*.pid
+*.seed
+*.pid.lock
 
-# Runtime data
-.nyc_output
-coverage/
-
-# IDE files
+# IDE / Editor files
 .vscode/
 .idea/
-*.swp
-*.swo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
 
 # OS files
 .DS_Store
 Thumbs.db
 
-# Build outputs
-dist/
-build/
-
-# Uploads and temporary files
-uploads/
-tmp/
-temp/
-
-# Database files (SQLite)
-*.db
-*.sqlite
+# MongoDB local data folder (if any)
+data/
