@@ -32,7 +32,7 @@ pids
 *.suo
 *.ntvs*
 *.njsproj
-*.sln
+
 
 # OS files
 .DS_Store
