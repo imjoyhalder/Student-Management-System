@@ -57,7 +57,11 @@ const studentUpload = multer({
 
 
 
+// home routes
 
+app.get('/', (req, res)=>{
+  res.send("Sever is running 🚀🚀")
+})
 
 
 const upload = multer({ storage: storage });
