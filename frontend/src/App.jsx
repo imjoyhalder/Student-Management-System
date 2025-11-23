@@ -15,7 +15,6 @@ function App() {
         <Route path="/student" element={<Student/>}/>
         <Route path="/pdf" element={<PDF/>}/>
       </Routes> 
-    
     </>
   )
 }
