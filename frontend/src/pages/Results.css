@@ -1,5 +1,5 @@
-/* PDF Page Styles - Consistent with Teacher/Student */
-.pdf-page {
+/* Results Page Styles - Consistent with other components */
+.results-page {
     display: flex;
     min-height: 100vh;
     background-color: #f8f9fa;
@@ -26,7 +26,7 @@
 }
 
 .page-title svg {
-    color: #2c5aa0;
+    color: #27ae60;
 }
 
 .page-subtitle {
@@ -35,24 +35,20 @@
     font-size: 0.95rem;
 }
 
-.add-book-btn {
-    background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
+.add-result-btn {
+    background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
     border: none;
     padding: 0.75rem 1.5rem;
     font-weight: 600;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
     transition: all 0.3s ease;
 }
 
-.mt-20{
-    margin-top: 20px;
-}
-
-.add-book-btn:hover {
-    background: linear-gradient(135deg, #1e3a8a 0%, #2c5aa0 100%);
+.add-result-btn:hover {
+    background: linear-gradient(135deg, #219653 0%, #27ae60 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(44, 90, 160, 0.4);
+    box-shadow: 0 6px 16px rgba(39, 174, 96, 0.4);
 }
 
 /* Stats Cards */
@@ -79,7 +75,7 @@
 .stats-content h3 {
     font-size: 2rem;
     font-weight: 700;
-    color: #2c5aa0;
+    color: #27ae60;
     margin-bottom: 0.25rem;
 }
 
@@ -91,7 +87,7 @@
 
 .stats-icon svg {
     font-size: 2.5rem;
-    color: #2c5aa0;
+    color: #27ae60;
     opacity: 0.8;
 }
 
@@ -110,11 +106,11 @@
     background: white;
     border: 2px solid #e9ecef;
     border-right: none;
-    color: #2c5aa0;
+    color: #27ae60;
 }
 
-/* Books Table Card */
-.books-table-card {
+/* Results Table Card */
+.results-table-card {
     border: none;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -123,7 +119,7 @@
 }
 
 .table-header {
-    background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
+    background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
     color: white;
     border-radius: 12px 12px 0 0 !important;
     padding: 1.25rem 1.5rem;
@@ -149,11 +145,11 @@
 }
 
 /* Table Styles */
-.books-table {
+.results-table {
     margin: 0;
 }
 
-.books-table thead th {
+.results-table thead th {
     background-color: #f8f9fa;
     border-bottom: 2px solid #e9ecef;
     padding: 1rem 0.75rem;
@@ -162,39 +158,39 @@
     font-size: 0.9rem;
 }
 
-.books-table tbody td {
+.results-table tbody td {
     padding: 1rem 0.75rem;
     vertical-align: middle;
     border-bottom: 1px solid #e9ecef;
 }
 
-.books-table tbody tr:hover {
+.results-table tbody tr:hover {
     background-color: #f8f9fa;
 }
 
-/* Book Info in Table */
-.book-info {
+/* Student Info in Table */
+.student-info {
     display: flex;
     align-items: center;
     gap: 0.75rem;
 }
 
-.book-icon {
+.student-avatar {
     width: 40px;
     height: 40px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
+    border-radius: 50%;
+    background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
 }
 
-.book-icon svg {
+.student-avatar svg {
     font-size: 1.2rem;
 }
 
-.book-name {
+.student-name {
     margin: 0;
     font-weight: 600;
     color: #2c3e50;
@@ -202,17 +198,19 @@
 }
 
 .department,
-.writer,
-.serial {
+.semester,
+.percentage,
+.cgpa {
     display: flex;
     align-items: center;
     font-size: 0.9rem;
 }
 
 .department svg,
-.writer svg,
-.serial svg {
-    color: #2c5aa0;
+.semester svg,
+.percentage svg,
+.cgpa svg {
+    color: #27ae60;
     font-size: 0.8rem;
 }
 
@@ -220,6 +218,14 @@
     font-size: 0.8rem;
     padding: 0.4rem 0.6rem;
     border-radius: 6px;
+}
+
+/* Status Badges */
+.status-badge,
+.publish-badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
 }
 
 /* Action Buttons */
@@ -237,21 +243,19 @@
     justify-content: center;
 }
 
-/* File Info */
-.file-info {
-    padding: 0.5rem;
+/* Subject Rows */
+.subject-row {
+    padding: 1rem;
     background: #f8f9fa;
-    border-radius: 6px;
+    border-radius: 8px;
     border: 1px solid #e9ecef;
 }
 
-.file-name {
-    font-weight: 500;
-    color: #2c3e50;
-}
-
-.file-size {
-    font-size: 0.8rem;
+.grade-field {
+    background-color: #e8f5e8;
+    border-color: #27ae60;
+    font-weight: 600;
+    color: #27ae60;
 }
 
 /* Loading and Empty States */
@@ -273,14 +277,14 @@
 }
 
 /* Modal Styles */
-.book-modal .modal-content {
+.result-modal .modal-content {
     border: none;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .modal-header-custom {
-    background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
+    background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
     color: white;
     border-radius: 12px 12px 0 0;
     border-bottom: none;
@@ -308,7 +312,7 @@
 }
 
 .form-label svg {
-    color: #2c5aa0;
+    color: #27ae60;
     font-size: 0.9rem;
     margin-right: 0.5rem;
 }
@@ -322,10 +326,18 @@
     transition: all 0.3s ease;
 }
 
+.mt-20{
+    margin-top: 20px;
+}
 .form-control:focus,
 .form-select:focus {
-    border-color: #2c5aa0;
-    box-shadow: 0 0 0 0.2rem rgba(44, 90, 160, 0.25);
+    border-color: #27ae60;
+    box-shadow: 0 0 0 0.2rem rgba(39, 174, 96, 0.25);
+}
+
+.form-control:read-only {
+    background-color: #f8f9fa;
+    border-color: #e9ecef;
 }
 
 .submit-btn {
@@ -361,12 +373,12 @@
         margin-bottom: 1rem;
     }
 
-    .add-book-btn {
+    .add-result-btn {
         width: 100%;
         margin-bottom: 1rem;
     }
 
-    .book-info {
+    .student-info {
         justify-content: center;
         text-align: center;
         flex-direction: column;
@@ -384,8 +396,9 @@
     }
 
     .department,
-    .writer,
-    .serial {
+    .semester,
+    .percentage,
+    .cgpa {
         justify-content: center;
     }
 }
@@ -404,12 +417,12 @@
         gap: 0.5rem;
     }
 
-    .book-icon {
+    .student-avatar {
         width: 35px;
         height: 35px;
     }
 
-    .book-icon svg {
+    .student-avatar svg {
         font-size: 1rem;
     }
 
@@ -430,4 +443,92 @@
     .modal-footer-custom .btn {
         width: 100%;
     }
+
+    .subject-row .col-md-4,
+    .subject-row .col-md-2 {
+        margin-bottom: 0.5rem;
+    }
 }
+
+/* Add these toast-specific styles to your existing Results.css */
+
+/* Custom Toast Styles */
+.Toastify__toast {
+    border-radius: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.Toastify__toast--success {
+    background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
+    border-left: 4px solid #2ecc71;
+}
+
+.Toastify__toast--error {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    border-left: 4px solid #e74c3c;
+}
+
+.Toastify__toast--warning {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    border-left: 4px solid #f39c12;
+}
+
+.Toastify__toast--info {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    border-left: 4px solid #3498db;
+}
+
+.Toastify__toast-body {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.Toastify__progress-bar {
+    height: 3px;
+}
+
+.Toastify__progress-bar--success {
+    background: #2ecc71;
+}
+
+.Toastify__progress-bar--error {
+    background: #e74c3c;
+}
+
+.Toastify__progress-bar--warning {
+    background: #f39c12;
+}
+
+.Toastify__progress-bar--info {
+    background: #3498db;
+}
+
+/* Ensure toasts appear above modals */
+.Toastify__toast-container {
+    z-index: 9999;
+}
+
+/* Loading toast specific styles */
+.Toastify__toast--default {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    color: white;
+}
+
+/* Responsive toast adjustments */
+@media (max-width: 480px) {
+    .Toastify__toast-container {
+        width: 100vw;
+        padding: 0;
+        left: 0;
+        margin: 0;
+    }
+
+    .Toastify__toast {
+        margin: 8px;
+        border-radius: 8px;
+    }
+}
+
+/* Existing Results.css styles remain the same below this point */
+/* ... your existing CSS ... */
