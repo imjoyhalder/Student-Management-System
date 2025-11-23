@@ -496,7 +496,7 @@ const Student = () => {
               <Button 
                 variant="primary" 
                 onClick={handleShow}
-                className="add-student-btn"
+                className="add-student-btn mt-20"
               >
                 <FaPlus className="me-2" />
                 Add Student

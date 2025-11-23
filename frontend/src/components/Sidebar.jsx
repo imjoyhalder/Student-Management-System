@@ -12,9 +12,7 @@ import {
   FaChartBar,
   FaCalendarAlt,
   FaSignOutAlt,
-  FaUserCircle,
-  FaHome,
-  FaBars
+  FaUserCircle
 } from 'react-icons/fa';
 import './Sidebar.css';
 
