@@ -14,7 +14,8 @@ app.use(cors({
   origin: [
     'https://student-management-system-sandy-two.vercel.app',
     'http://localhost:3000',
-    'http://localhost:5173'
+    'http://localhost:5173',
+    'https://edumanage-hub.vercel.app'
   ],
   credentials: true
 }));
