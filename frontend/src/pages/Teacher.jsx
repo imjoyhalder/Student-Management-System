@@ -75,7 +75,7 @@ const Teacher = () => {
   const fetchTeachers = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:8000/allteacher");
+      const response = await axios.get("https://student-management-system-sandy-two.vercel.app/allteacher");
       setTeachers(response.data);
       setLoading(false);
     } catch (error) {
@@ -88,7 +88,7 @@ const Teacher = () => {
   // Fetch teacher statistics
   const fetchTeacherStats = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/teacherstats");
+      const response = await axios.get("https://student-management-system-sandy-two.vercel.app/teacherstats");
       setStats(response.data);
     } catch (error) {
       console.error("Error fetching teacher stats:", error);
@@ -99,7 +99,7 @@ const Teacher = () => {
   const createTeacher = async () => {
     try {
       setLoading(true);
-      await axios.post("http://localhost:8000/createteacher", {
+      await axios.post("https://student-management-system-sandy-two.vercel.app/createteacher", {
         ...formData,
         experience: parseInt(formData.experience) || 0,
         salary: parseInt(formData.salary) || 0,
@@ -121,7 +121,7 @@ const Teacher = () => {
   const updateTeacher = async () => {
     try {
       setLoading(true);
-      await axios.patch(`http://localhost:8000/updateteacher/${currentTeacherId}`, {
+      await axios.patch(`https://student-management-system-sandy-two.vercel.app/updateteacher/${currentTeacherId}`, {
         ...formData,
         experience: parseInt(formData.experience) || 0,
         salary: parseInt(formData.salary) || 0,
@@ -143,7 +143,7 @@ const Teacher = () => {
   const deleteTeacher = async (id) => {
     if (window.confirm("Are you sure you want to delete this teacher?")) {
       try {
-        await axios.delete(`http://localhost:8000/deleteteacher/${id}`);
+        await axios.delete(`https://student-management-system-sandy-two.vercel.app/deleteteacher/${id}`);
         showAlert('Teacher deleted successfully!');
         fetchTeachers();
         fetchTeacherStats();
@@ -158,7 +158,7 @@ const Teacher = () => {
   const deactivateTeacher = async (id) => {
     if (window.confirm("Are you sure you want to deactivate this teacher?")) {
       try {
-        await axios.patch(`http://localhost:8000/teacher/${id}/deactivate`);
+        await axios.patch(`https://student-management-system-sandy-two.vercel.app/teacher/${id}/deactivate`);
         showAlert('Teacher deactivated successfully!');
         fetchTeachers();
         fetchTeacherStats();
@@ -224,7 +224,7 @@ const Teacher = () => {
   const handleEditModal = async (id) => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:8000/teacher/${id}`);
+      const response = await axios.get(`https://student-management-system-sandy-two.vercel.app/teacher/${id}`);
       const teacher = response.data;
       
       setFormData({

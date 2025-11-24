@@ -13,7 +13,8 @@ const dotenv = require('dotenv')
 app.use(cors({
   origin: [
     'https://student-management-system-sandy-two.vercel.app',
-    'http://localhost:3000'
+    'http://localhost:3000',
+    'http://localhost:5173'
   ],
   credentials: true
 }));

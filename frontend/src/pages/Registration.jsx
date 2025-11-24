@@ -76,7 +76,7 @@ const Registration = () => {
     
     if (validateForm()) {
       setIsLoading(true)
-      axios.post("http://localhost:8000/registration", {
+      axios.post("https://student-management-system-sandy-two.vercel.app/registration", {
         username: userName,
         email: email,
         password: password

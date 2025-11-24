@@ -62,7 +62,7 @@ const Login = () => {
     
     if (validateForm()) {
       setIsLoading(true)
-      axios.post("http://localhost:8000/login", {
+      axios.post("https://student-management-system-sandy-two.vercel.app/login", {
         email: email,
         password: password
       }).then((data) => {

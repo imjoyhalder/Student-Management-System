@@ -65,7 +65,7 @@ const PDF = () => {
   const fetchBooks = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:8000/allbook");
+      const response = await axios.get("https://student-management-system-sandy-two.vercel.app/allbook");
       setBookslist(response.data);
       setLoading(false);
     } catch (error) {
@@ -78,7 +78,7 @@ const PDF = () => {
   // Fetch book statistics
   const fetchBookStats = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/bookstats");
+      const response = await axios.get("https://student-management-system-sandy-two.vercel.app/bookstats");
       setStats(response.data);
     } catch (error) {
       console.error("Error fetching book stats:", error);
@@ -89,7 +89,7 @@ const PDF = () => {
   const searchBooks = async (query) => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:8000/books/search/${query}`);
+      const response = await axios.get(`https://student-management-system-sandy-two.vercel.app/books/search/${query}`);
       setBookslist(response.data);
       setLoading(false);
     } catch (error) {
@@ -113,7 +113,7 @@ const PDF = () => {
         formDataToSend.append('avatar', formData.file);
       }
 
-      await axios.post("http://localhost:8000/createbook", formDataToSend, {
+      await axios.post("https://student-management-system-sandy-two.vercel.app/createbook", formDataToSend, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -145,7 +145,7 @@ const PDF = () => {
         formDataToSend.append('avatar', formData.file);
       }
 
-      await axios.patch(`http://localhost:8000/updatebook/${currentBookId}`, formDataToSend, {
+      await axios.patch(`https://student-management-system-sandy-two.vercel.app/updatebook/${currentBookId}`, formDataToSend, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -167,7 +167,7 @@ const PDF = () => {
   const deleteBook = async (id) => {
     if (window.confirm("Are you sure you want to delete this book?")) {
       try {
-        await axios.delete(`http://localhost:8000/deletebook/${id}`);
+        await axios.delete(`https://student-management-system-sandy-two.vercel.app/deletebook/${id}`);
         showAlert('Book deleted successfully!');
         fetchBooks();
         fetchBookStats();
@@ -243,7 +243,7 @@ const PDF = () => {
   const handleEditModal = async (id) => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:8000/book/${id}`);
+      const response = await axios.get(`https://student-management-system-sandy-two.vercel.app/book/${id}`);
       const book = response.data;
       
       setFormData({
@@ -479,7 +479,7 @@ const PDF = () => {
                                 size="sm" 
                                 variant="outline-primary" 
                                 className="me-1 action-btn"
-                                href={`http://localhost:8000/${item.url}`}
+                                href={`https://student-management-system-sandy-two.vercel.app/${item.url}`}
                                 target="_blank"
                                 title="View PDF"
                               >
@@ -489,7 +489,7 @@ const PDF = () => {
                                 size="sm" 
                                 variant="outline-success"
                                 className="me-1 action-btn"
-                                href={`http://localhost:8000/${item.url}`}
+                                href={`https://student-management-system-sandy-two.vercel.app/${item.url}`}
                                 download
                                 title="Download PDF"
                               >

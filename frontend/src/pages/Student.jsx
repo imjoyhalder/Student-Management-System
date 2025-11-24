@@ -195,7 +195,7 @@ const Student = () => {
         submitData.append("profileImage", profileImage);
       }
 
-      await axios.post("http://localhost:8000/createstudent", submitData, {
+      await axios.post("https://student-management-system-sandy-two.vercel.app/createstudent", submitData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -230,7 +230,7 @@ const Student = () => {
         submitData.append("profileImage", profileImage);
       }
 
-      await axios.patch(`http://localhost:8000/updatestudent/${currentStudentId}`, submitData, {
+      await axios.patch(`https://student-management-system-sandy-two.vercel.app/updatestudent/${currentStudentId}`, submitData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -270,7 +270,7 @@ const Student = () => {
   const handleShowModal = async (id) => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:8000/student/${id}`);
+      const response = await axios.get(`https://student-management-system-sandy-two.vercel.app/student/${id}`);
       const student = response.data;
       
       setFormData({
@@ -303,7 +303,7 @@ const Student = () => {
       });
 
       if (student.profileImage) {
-        setImagePreview(`http://localhost:8000/${student.profileImage}`);
+        setImagePreview(`https://student-management-system-sandy-two.vercel.app/${student.profileImage}`);
       }
 
       setUpdate(true);
@@ -320,7 +320,7 @@ const Student = () => {
   const handleViewDetails = async (id) => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:8000/student/${id}`);
+      const response = await axios.get(`https://student-management-system-sandy-two.vercel.app/student/${id}`);
       setCurrentStudent(response.data);
       setShowDetails(true);
     } catch (error) {
@@ -333,7 +333,7 @@ const Student = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this student?")) {
-      axios.post("http://localhost:8000/delete", { id: id })
+      axios.post("https://student-management-system-sandy-two.vercel.app/delete", { id: id })
         .then(() => {
           showAlert('✅ Student deleted successfully!');
           fetchStudents();
@@ -347,7 +347,7 @@ const Student = () => {
 
   const fetchStudents = () => {
     setLoading(true);
-    axios.get("http://localhost:8000/allstudent")
+    axios.get("https://student-management-system-sandy-two.vercel.app/allstudent")
       .then((data) => {
         setStudentList(data.data);
         setFilteredStudents(data.data);
@@ -700,7 +700,7 @@ const Student = () => {
                               <div className="student-avatar">
                                 {item.profileImage ? (
                                   <img 
-                                    src={`http://localhost:8000/${item.profileImage}`} 
+                                    src={`https://student-management-system-sandy-two.vercel.app/${item.profileImage}`} 
                                     alt={item.studentname}
                                     className="avatar-image"
                                   />
@@ -1198,7 +1198,7 @@ const Student = () => {
                     <div className="profile-image-large">
                       {currentStudent.profileImage ? (
                         <img 
-                          src={`http://localhost:8000/${currentStudent.profileImage}`} 
+                          src={`https://student-management-system-sandy-two.vercel.app/${currentStudent.profileImage}`} 
                           alt={currentStudent.studentname}
                           className="profile-img"
                         />

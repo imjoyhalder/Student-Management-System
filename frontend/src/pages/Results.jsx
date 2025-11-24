@@ -119,7 +119,7 @@ const Results = () => {
     const fetchResults = async () => {
         try {
             setLoading(true);
-            const response = await axios.get("http://localhost:8000/allresults");
+            const response = await axios.get("https://student-management-system-sandy-two.vercel.app/allresults");
             setResults(response.data);
             setLoading(false);
         } catch (error) {
@@ -132,7 +132,7 @@ const Results = () => {
     // Fetch students for dropdown
     const fetchStudents = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/allstudent");
+            const response = await axios.get("https://student-management-system-sandy-two.vercel.app/allstudent");
             setStudents(response.data);
         } catch (error) {
             console.error("Error fetching students:", error);
@@ -143,7 +143,7 @@ const Results = () => {
     // Fetch result statistics
     const fetchResultStats = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/resultstats");
+            const response = await axios.get("https://student-management-system-sandy-two.vercel.app/resultstats");
             setStats(response.data);
         } catch (error) {
             console.error("Error fetching result stats:", error);
@@ -154,7 +154,7 @@ const Results = () => {
     const searchResults = async (query) => {
         try {
             setLoading(true);
-            const response = await axios.get(`http://localhost:8000/results/search/${query}`);
+            const response = await axios.get(`https://student-management-system-sandy-two.vercel.app/results/search/${query}`);
             setResults(response.data);
             setLoading(false);
         } catch (error) {
@@ -171,7 +171,7 @@ const Results = () => {
         try {
             setSaving(true);
 
-            await axios.post("http://localhost:8000/createresult", {
+            await axios.post("https://student-management-system-sandy-two.vercel.app/createresult", {
                 ...formData,
                 subjects: formData.subjects.map(subject => ({
                     ...subject,
@@ -200,7 +200,7 @@ const Results = () => {
         try {
             setSaving(true);
 
-            await axios.patch(`http://localhost:8000/updateresult/${currentResultId}`, {
+            await axios.patch(`https://student-management-system-sandy-two.vercel.app/updateresult/${currentResultId}`, {
                 ...formData,
                 subjects: formData.subjects.map(subject => ({
                     ...subject,
@@ -228,7 +228,7 @@ const Results = () => {
             const toastId = showLoadingToast('🔄 Deleting result...');
 
             try {
-                await axios.delete(`http://localhost:8000/deleteresult/${id}`);
+                await axios.delete(`https://student-management-system-sandy-two.vercel.app/deleteresult/${id}`);
                 updateToast(toastId, '✅ Result deleted successfully!', 'success');
                 fetchResults();
                 fetchResultStats();
@@ -245,7 +245,7 @@ const Results = () => {
             const toastId = showLoadingToast(`🔄 ${currentStatus ? 'Unpublishing' : 'Publishing'} result...`);
 
             try {
-                await axios.patch(`http://localhost:8000/result/${id}/publish`, {
+                await axios.patch(`https://student-management-system-sandy-two.vercel.app/result/${id}/publish`, {
                     published: !currentStatus
                 });
 
@@ -362,7 +362,7 @@ const Results = () => {
     const handleEditModal = async (id) => {
         try {
             setLoading(true);
-            const response = await axios.get(`http://localhost:8000/result/${id}`);
+            const response = await axios.get(`https://student-management-system-sandy-two.vercel.app/result/${id}`);
             const result = response.data;
 
             setFormData({
