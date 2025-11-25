@@ -333,7 +333,7 @@ const Student = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this student?")) {
-      axios.post("https://student-management-system-sandy-two.vercel.app/delete", { id: id })
+      axios.post("https://student-management-system-sandy-two.vercel.app/deletestudent", { id: id })
         .then(() => {
           showAlert('✅ Student deleted successfully!');
           fetchStudents();

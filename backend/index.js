@@ -482,6 +482,10 @@ app.delete("/deletestudent/:id", async (req, res) => {
     // Delete the student from database
     await Student.findByIdAndDelete(studentId);
 
+    // Also delete this id's student results 
+
+    await Result.findByIdAndDelete(studentId)
+
     // If student had a profile image, delete it from the file system
     if (student.profileImage) {
       const fs = require('fs');
